@@ -11,7 +11,9 @@ bear = Toy('lotso bear','http://vignette1.wikia.nocookie.net/pixar/images/3/38/T
 
 hot_wheel = Toy("orange hot wheel", "https://assets.wired.com/photos/w_1210/wp-content/uploads/2016/09/HotwheelsTA.jpg")
 
-toys = [lego_batman,bear,hot_wheel]
+gi_joe = Toy("G I Joe", "https://s-media-cache-ak0.pinimg.com/564x/f0/d9/74/f0d97456131bccc233733561cd812f56.jpg")
+
+toys = [lego_batman,bear,hot_wheel, gi_joe]
 
 def get_toy(id):
 	return [toy for toy in toys if toy.id == id][0]

@@ -10,36 +10,68 @@
     <style>
     body {
         text-align: center;
-        
+        background: #cbcfd6;
+        color: #213696;
+        font-family: verdana;
     }
+    
     .jumbotron {
         text-align: center;
         font-family: optima;
         background: black;
-        color: black;
-        opacity: 0.8;
-        background-image: url("https://images.blogthings.com/thecolorfulpatterntest/pattern-1.png");
+        color: #02ff13;
+        background-image: url("http://2.bp.blogspot.com/-sj-ah7PMCvk/UeDD4EQkAqI/AAAAAAAAABo/QfKKgI5rw7w/s1600/Clasicos.png");
+        -webkit-text-fill-color: black;
+        -webkit-text-stroke-color: blue;
+        -webkit-text-stroke-width: 8.00px;
     }
-
+    
     a,
     a:link {
-        color:inherit;
+        color: inherit;
         text-decoration: none;
-
     }
-
+    
+    #logo {
+        border-radius: 35px 20px 35px 20px / 20px 35px 20px 35px;
+        opacity: 0.99
+    }
+    
+    .images {
+        border-radius: 25px;
+        -webkit-transition: -webkit-transform .5s ease-in-out;
+        transition: transform .5s ease-in-out;
+    }
+    
+    img {
+        border-radius: 50%;
+        -webkit-transition: -webkit-transform .5s ease-in-out;
+        transition: transform .5s ease-in-out;
+    }
+    
+    .images:hover {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
     </style>
 </head>
 
 <body>
-<div class="jumbotron"> <h1><a href="/toys">My Virtual Toy Collection!</a></h1></div>
-    {% block content %} 
-        <br>Click <a href="{{url_for('submit')}}"><b>here</b></a> to submit a new toy! <br><br><br> 
-        <div class="container"><div class="row">
-        {% for toy in toys %}
-            <div class="col-md-3 col-xs-6"><h3><a href = "/toys/{{ toy.id }}">{{ toy.name.title() }}</a></h3><img src={{ toy.image_url }} style="width:60%"></div>
-        {% endfor %}
-        </div></div>
+    <div class="jumbotron">
+        <h1><a href="/toys"><img src="https://s24.postimg.org/ox1g1crdx/15a1c8259bd1aa48c81.jpg" id="logo"></a></h1></div>
+    {% block content %}
+    <br>Click <a href="{{url_for('submit')}}"><b>here</b></a> to submit a new toy!
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            {% for toy in toys %}
+            <div class="col-md-3 col-xs-6">
+                <h3><a href = "/toys/{{ toy.id }}">{{ toy.name.title() }}</a></h3><img class="images" src={{ toy.image_url }} style="height:150px"></div>
+            {% endfor %}
+        </div>
+    </div>
     {% endblock %}
 </body>
 

@@ -1,7 +1,7 @@
 {% extends "index.html" %} 
 	{% block content %}
 	<h3>Toy #{{ toy.id }}</h3><br><br> 
-	<p><h3>{{ toy.name.title() }}</h3><br><img src={{ toy.image_url }} style="width:20%"></p>
-	<a href="/toys/{{ toy.id }}/edit"><b>Edit</b></a>
+	<p><h3>{{ toy.name.title() }}</h3><br><img src={{ toy.image_url }} style="width:20%" class="images"></p>
+	<a href="/toys/{{ toy.id }}/edit"><b>Edit</b></a><br><br>
 	<form action="{{ url_for('show_individual_toy', id=toy.id)}}?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>
 	{% endblock %}
