@@ -1,0 +1,8 @@
+{% extends "index.html" %} {% block content %}
+    <h3>Submit New Toy!</h3>
+    <form action="/toys" method="POST">
+        <input type="text" placeholder="Toy Name" name="toyname">
+        <input type="text" placeholder="Image URL" name="image_url">
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
